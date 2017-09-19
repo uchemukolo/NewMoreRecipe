@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
-  up: function(queryInterface, Sequelize) {
-    return queryInterface.createTable('recipes', {
+  up: (queryInterface, Sequelize) => {
+     queryInterface.createTable('recipes', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,28 +9,40 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'users',
+          key: 'id',
+          as: 'userId'
+        }
       },
       recipeName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       image: {
         type: Sequelize.BLOB
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       mealType: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       dishType: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      infredients: {
-        type: Sequelize.TEXT
+      ingredients: {
+        type: Sequelize.TEXT,
+        allowNull: false
       },
       preparation: {
-        type: Sequelize.TEXT
+        type: Sequelize.TEXT,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -42,7 +54,6 @@ module.exports = {
       }
     });
   },
-  down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('recipes');
+  down: (queryInterface) =>
+   queryInterface.dropTable('recipes')
   }
-};
