@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) =>{
     views: DataTypes.INTEGER
   });
   views.associate = (models) => {
-    views.belongsto(models.recipes),{
+    views.belongsTo(models.recipes),{
       foreignKey: 'recipeId'
       
     }
