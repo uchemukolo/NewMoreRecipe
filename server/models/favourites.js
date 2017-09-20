@@ -1,14 +1,25 @@
 'use strict';
-module.exports = function(sequelize, DataTypes) {
-  var favourites = sequelize.define('favourites', {
-    userId: DataTypes.INTEGER,
-    recipeId: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
+module.exports = (sequelize, DataTypes) => {
+  const favourites = sequelize.define('favourites', {
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    recipeId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
+  favourites.associate = (models) => {
+    favourites.belongsTo(models.recipes),{
+      foreignKey: 'recipeId'
+    }
+  }
+  favourites.associate = (models) => {
+    favourites.belongsTo(models.users),{
+      foreignKey: 'userId'
+      
+    }
+  }
   return favourites;
 };
