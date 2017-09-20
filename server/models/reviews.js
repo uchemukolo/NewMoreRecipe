@@ -24,12 +24,12 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   reviews.associate = (models) => {
-    reviews.belongsto(models.users),{
+    reviews.belongsTo(models.users),{
       foreignKey: 'userId' 
     }
   }
   reviews.associate = (models) => {
-    reviews.belongsto(models.recipes),{
+    reviews.belongsTo(models.recipes),{
       foreignKey: 'recipeId' 
     }
   }
