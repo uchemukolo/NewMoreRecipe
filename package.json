@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon --watch server --exec babel-node -- server/bin/www.js",
+    "u": "nodemon --watch server --exec babel-node -- server/bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "uche mukolo",
