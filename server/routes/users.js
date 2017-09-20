@@ -3,6 +3,7 @@ import userController from '../controllers/users';
 
 let router = express.Router();
 
-router.post('/signup', userController.Signup);
+router.post('/signup', userController.signup);
+router.post('/signin', userController.signin);
 
 export default router;
