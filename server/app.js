@@ -10,7 +10,8 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended:false}));
 
 app.use('/api/users', users);
-app.use('/api/recipes', recipes);
+app.use('/api/recipes/', recipes);
+//app.use('/api/recipes/:id', recipes);
 
 app.get('/', (req, res) => res.status(200).send({
     message: 'Welcome to our first route!!!'
