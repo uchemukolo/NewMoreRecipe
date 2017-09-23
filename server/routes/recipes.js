@@ -3,7 +3,8 @@ import recipeController from '../controllers/recipes';
 
 let router = express.Router();
 
-router.post('/addrecipe', recipeController.addRecipe);
-//router.post('/signin', recipeController.modifyrecipe);
+router.post('/', recipeController.addRecipe);
+router.delete('/:Id', recipeController.destroy);
+router.put('/:id', recipeController.update);
 
 export default router;
