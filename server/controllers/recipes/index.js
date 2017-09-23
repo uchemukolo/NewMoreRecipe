@@ -1,12 +1,12 @@
 import addRecipe from './addrecipe.js'; 
-//import update from './update.js';
+import update from './update.js';
 import destroy from './delete.js'; 
 
 
 const recipeController = {
     addRecipe,
     destroy,
-    //update,
+    update,
 
 }
 
