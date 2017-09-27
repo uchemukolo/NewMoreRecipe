@@ -3,6 +3,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import users from './routes/users';
 import recipes from './routes/recipes';
+import reviews from './routes/reviews';
 
 const app = express();
 
@@ -10,8 +11,8 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended:false}));
 
 app.use('/api/users', users);
-app.use('/api/recipes/', recipes);
-//app.use('/api/recipes/:id', recipes);
+app.use('/api/recipes', recipes);
+app.use('/api/recipes/:Id/reviews', reviews);
 
 app.get('/', (req, res) => res.status(200).send({
     message: 'Welcome to our first route!!!'
