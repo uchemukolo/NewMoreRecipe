@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended:false}));
 
 app.use('/api/users', users);
 app.use('/api/recipes', recipes);
-app.use('/api/recipes/:Id/reviews', reviews);
+app.use('/api/recipes', reviews);
 
 app.get('/', (req, res) => res.status(200).send({
     message: 'Welcome to our first route!!!'

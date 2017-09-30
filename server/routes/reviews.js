@@ -5,7 +5,7 @@ import reviewController from '../controllers/reviews';
 
 let router = express.Router();
 
-router.post('/:id/reviews', reviewController.addReview);
+router.post('/:Id/reviews', reviewController.addReview);
 
 
 export default router;

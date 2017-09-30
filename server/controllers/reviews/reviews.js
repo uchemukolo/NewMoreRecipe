@@ -4,12 +4,14 @@ const users = models.users;
 const recipes = models.recipes;
 const reviews = models.reviews;
 const addReview = (req, res) => {
-    const {userId, reviews} = req.body;
-    const recipeId = req.params.Id
+    const {userId, recipeId, review, upVote, downVote} = req.body;
     return reviews
     .create({
         userId: userId,
-        reviews: reviews
+        recipeId: recipeId,
+        review: review,
+        upVote: upVote,
+        downVote: downVote
     }).then(addReview => {
         res.status(201).send(addReview)
     })
