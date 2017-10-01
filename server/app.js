@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 import users from './routes/users';
 import recipes from './routes/recipes';
 import reviews from './routes/reviews';
+import favourites from './routes/favourites';
+
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.use(bodyParser.urlencoded({ extended:false}));
 app.use('/api/users', users);
 app.use('/api/recipes', recipes);
 app.use('/api/recipes', reviews);
+app.use('/api/users', favourites);
+
 
 app.get('/', (req, res) => res.status(200).send({
     message: 'Welcome to our first route!!!'
