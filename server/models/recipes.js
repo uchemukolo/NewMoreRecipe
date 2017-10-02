@@ -31,7 +31,17 @@ module.exports = (sequelize, DataTypes) => {
     preparation: {
       type: DataTypes.TEXT,
     allownull: false
-    }
+    },
+    upVote: {
+      type: DataTypes.INTEGER,
+      allownull: false,
+      defaultValue: 0
+    },
+    downVote: {
+      type: DataTypes.INTEGER,
+      allownull: false,
+      defaultValue: 0
+   }
   
   });
   recipes.associate = (models) => {

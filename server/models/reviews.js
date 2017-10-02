@@ -12,15 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     review: {
       type: DataTypes.TEXT,
       allowNull: false
-    },
-    upVote: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    downVote: {
-      type: DataTypes.INTEGER,
-      allowNull: false
     }
+ 
   });
 
   reviews.associate = (models) => {

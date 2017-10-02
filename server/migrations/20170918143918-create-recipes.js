@@ -44,6 +44,16 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
+      upVote: {
+        type: Sequelize.INTEGER,
+        allownull: false,
+        defaultValue: 0
+      },
+      downVote: {
+        type: Sequelize.INTEGER,
+        allownull: false,
+        defaultValue: 0
+     },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
