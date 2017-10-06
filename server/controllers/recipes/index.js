@@ -10,7 +10,6 @@ const recipeController = {
     update,
     getAll,
     votes
-
 }
 
 export default recipeController;
